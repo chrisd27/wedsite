@@ -1,0 +1,50 @@
+﻿@model IEnumerable<wedding.Model.Guest>
+
+    @foreach (var item in Model)
+    {
+        var RSVPClass = "";
+        if (item.RSVPTimestamp != null && item.RSVP.Equals(false))
+        {
+            RSVPClass = "NotAttending";
+        }else if (item.RSVP.Equals(true))
+        {
+            RSVPClass = "Attending";
+        }
+        <div class="RSVPGuest @RSVPClass">
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(Model => item.GuestId, new { @Name = "GuestId", id = "guestId" + item.GuestId })
+            <div id="RSVPDetails" class="RSVPDetails">
+                <div  id="rsvpForHeader">
+                    <p>RSVP for:</p>
+                </div>
+                <p>
+                    @Html.DisplayFor(Model => item.firstName)
+                </p>
+                <p>
+                    @Html.DisplayFor(Model => item.lastName)
+                </p>
+            </div>
+            <div id="RSVPCheckbox" class="RSVPCheckbox">
+                <div>
+                    @Html.RadioButtonFor(Model => item.importantGuest, true, new { @Name = "importantGuest", id = "RSVPTrue" + item.GuestId, @Class = "true"})
+                    <label>I CAN attend<span></span></label>
+                </div>
+                <div>
+                    @Html.RadioButtonFor(Model => item.importantGuest, false, new { @Name = "importantGuest", id = "RSVPFalse" + item.GuestId, @Class = "false" })
+                    <label>I CANNOT attend<span></span></label>
+                </div>
+            </div>
+            <div id="RSVPButton" class="RSVPButton">
+                <input type="submit" value="RSVP" class="RSVPSubmit grow transitionOff" id="RSVP_@item.GuestId" />
+            </div>
+            <div class="RSVPConfirmation" id="confirmationButton_@item.GuestId">
+                <p class="RSVPConfText" id="confirmationText_@item.GuestId"></p>
+            </div>
+            <p class="RSVPChange">Click here to change your mind!</p>
+         }
+        </div>
+    
+}
+        
+    

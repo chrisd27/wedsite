@@ -1,0 +1,11 @@
+﻿
+@using (Html.BeginForm("Index", "Admin"))
+{
+    <div class="form-group" id="adminForm">
+        @Html.Label("Enter admin password", new { @id = "loginLabel" })
+      
+            <input type="password" name="adminPassword" id="adminPassword"/>
+            
+        <input id="adminSubmit" type="submit" value="Enter" class="btn btn-default" />
+    </div>
+}

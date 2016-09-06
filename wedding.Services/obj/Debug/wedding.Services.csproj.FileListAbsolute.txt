@@ -1,0 +1,13 @@
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.Services.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.Services.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.Contracts.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.DAL.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.Model.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\EntityFramework.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.Contracts.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.DAL.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\wedding.Model.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\bin\Debug\EntityFramework.xml
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\obj\Debug\wedding.Services.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\obj\Debug\wedding.Services.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\obj\Debug\wedding.Services.pdb

@@ -1,0 +1,4 @@
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\bin\Release\wedding.Model.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\bin\Release\wedding.Model.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\obj\Release\wedding.Model.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\obj\Release\wedding.Model.pdb

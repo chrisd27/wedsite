@@ -1,0 +1,51 @@
+﻿@model wedding.Model.Wedding
+
+@{
+    ViewBag.Title = "DashboardIndex";
+}
+
+
+<h2>@Html.DisplayFor(model => model.weddingNickName)</h2>
+
+<div id="dashboardItems">
+    <div data-tile="first" class="dashboardItem first">
+        <div id="venueItem"></div>
+        <p>Wedding</p>
+    </div>
+    <div data-tile="second" class="dashboardItem second">
+        <div id="guestItem"></div>
+        <p>Guests @ViewData["numGuests"]</p>
+    </div>
+    <div data-tile="third" class="dashboardItem third">
+        <div id="foodItem"></div>
+        <p>Food @ViewData["numFood"]</p>
+    </div>
+    <div data-tile="fourth" class="dashboardItem fourth">
+        <div id="accomItem"></div>
+        <p>Accommodation @ViewData["numAccom"]</p>
+    </div>
+
+</div>
+<div id="dashboardTiles">
+    <div class="first dashboardTile">
+        @{
+            Html.RenderAction("Dashboard_Wedding", "Admin", new { weddingId = Model.WeddingId });
+        }
+    </div>
+    <div class="dashboardTile second">
+        @{  
+            Html.RenderAction("Dashboard_Guests", "Admin", new { weddingId = Model.WeddingId });
+        }
+    </div>
+    <div class="dashboardTile third">
+        @{
+            Html.RenderAction("Dashboard_Food", "Admin", new { weddingId = Model.WeddingId });
+        }
+    </div>
+    <div class="dashboardTile fourth">
+        @{
+            Html.RenderAction("Dashboard_Accom", "Admin", new { weddingId = Model.WeddingId });
+        }
+    </div>
+</div>
+

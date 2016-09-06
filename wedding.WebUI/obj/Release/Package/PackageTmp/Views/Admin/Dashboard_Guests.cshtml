@@ -1,0 +1,42 @@
+﻿@model IEnumerable<wedding.Model.Guest>
+
+<h4>Guests</h4>
+<div class="listContainer">
+    @if ((bool)ViewData["guests"].Equals(true))
+    {
+        <p>
+            @Html.ActionLink("Add new guest", "CreateGuest", new { weddingId = ViewData["weddingId"] })
+        </p>
+        <div class="dashboradHeaders col5">
+            <p>Name</p>
+            <p class="mobileTablet">Family/Friend</p>
+            <p class="mobile">Email address</p>
+            <p class="mobile">Username</p>
+            <p>RSVP</p>
+            <p>RSVP - Date</p>
+        </div>
+
+        foreach (var item in Model)
+        {
+            <div class="dashboardContent col5">
+                <p>@Html.DisplayFor(modelItem => item.firstName) @Html.DisplayFor(modelItem => item.lastName)</p>
+                <p class="mobileTablet">@Html.DisplayFor(modelItem => item.guestType)</p">
+                <p class="mobile">@Html.DisplayFor(modelItem => item.emailAddress)</p>
+                <p class="mobile">@Html.DisplayFor(modelItem => item.username)</p>
+                <p class="mobile">@Html.DisplayFor(modelItem => item.RSVP)</p>
+                <p class="mobile">@Html.DisplayFor(modelItem => item.RSVPTimestamp)</p>
+                <div class="right">
+                    @Html.ActionLink("Edit", "EditGuest", new { id = item.GuestId }) |
+                    @Html.ActionLink("Delete", "DeleteGuest", new { id = item.GuestId })
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>
+            @Html.ActionLink("Add your first guest!", "CreateGuest", new { weddingId = ViewData["weddingId"] });
+        </p>
+        <p> Start adding your guests to your wedding!</p>
+    }
+</div>

@@ -1,0 +1,79 @@
+﻿@model wedding.Model.Guest
+
+@{
+    ViewBag.Title = "CreateGuest";
+    
+}
+
+<h2>CreateGuest</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal createBody">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        
+        @Html.HiddenFor(model => model.WeddingId, new { @Value = ViewData["WeddingId"] });
+        
+        <div class="form-group">
+            <label for="guestType" class="control-label col-md-2">Guest Type</label>
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.guestType, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.guestType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="firstName" class="control-label col-md-2">First Name</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName" class="control-label col-md-2">Last Name</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="emailAddress" class="control-label col-md-2">Email Address</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.emailAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.emailAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="importantGuest" class="control-label col-md-2">VIP</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.importantGuest)
+                    @Html.ValidationMessageFor(model => model.importantGuest, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div id="GuestDependantsContainer" class="form-group">
+            <label for="dependants" class="control-label col-md-2">Dependants</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dependants, new { htmlAttributes = new { @class = "form-control", @name = "dependants" } })
+                @Html.ValidationMessageFor(model => model.dependants, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

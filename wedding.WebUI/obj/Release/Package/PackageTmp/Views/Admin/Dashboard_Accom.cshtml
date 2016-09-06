@@ -1,0 +1,46 @@
+﻿@model IEnumerable<wedding.Model.Accommodation>
+
+<h4>Accommodation</h4>
+<div class="listContainer">
+    
+    @if ((bool)ViewData["accom"].Equals(true))
+    {
+        <p>
+            @Html.ActionLink("Add a new accommodation", "CreateAccomm", new { weddingId = ViewData["weddingId"] })
+        </p>
+        <div class="col5 dashboradHeaders">
+            <p>Name</p>
+            <p  class="mobileTablet">Postcode</p>
+            <p  class="mobile">City</p>
+            <p>Wedbsite</p>
+        </div>
+
+        foreach (var item in Model) {
+            <div class="col5 dashboardContent">
+                <p>
+                    @Html.DisplayFor(modelItem => item.accommodationName)
+                </p>
+                <p  class="mobileTablet">
+                    @Html.DisplayFor(modelItem => item.accommodationPostcode)
+                </p>
+                <p  class="mobile">
+                    @Html.DisplayFor(modelItem => item.accommodationCity)
+                </p>
+                <p>
+                    @Html.DisplayFor(modelItem => item.accommodationWebsite)
+                </p>
+                <p>
+                    @Html.ActionLink("Edit", "EditAccomm", new { id=item.AccommodationId }) |
+                    @Html.ActionLink("Delete", "DeleteAccomm", new { id=item.AccommodationId })
+                </p>
+            </div>
+        }
+    }
+    else
+    {
+    <p> Add some accommodation ideas here.... @Html.ActionLink("Add a new accommodation", "CreateAccomm", new { weddingId = ViewData["weddingId"] }) </p>
+   
+    }
+    
+</div>
+

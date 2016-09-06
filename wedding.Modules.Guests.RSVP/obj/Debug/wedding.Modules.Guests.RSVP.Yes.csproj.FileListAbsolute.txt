@@ -1,0 +1,9 @@
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\bin\Debug\wedding.Modules.Guests.RSVP.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\bin\Debug\wedding.Modules.Guests.RSVP.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\bin\Debug\wedding.Contracts.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\bin\Debug\wedding.Model.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\bin\Debug\wedding.Contracts.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\bin\Debug\wedding.Model.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\obj\Debug\wedding.Modules.Guests.RSVP.Yes.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\obj\Debug\wedding.Modules.Guests.RSVP.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Modules.Guests.RSVP\obj\Debug\wedding.Modules.Guests.RSVP.pdb

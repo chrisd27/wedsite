@@ -1,0 +1,27 @@
+﻿@model IEnumerable<wedding.Model.Accommodation>
+
+<div>
+    <h2>Local accommodation and directions</h2>
+    <div id="mapAndRecommendations">
+        <div id="accomList">
+            <h5>Select recommended accommodation for directions</h5>
+
+@foreach (var item in Model)
+{
+            <div class="accomSetion">
+                <p id="accom_@(item.accommodationName)" data-destination="@(item.accommodationName), @(item.accommodationCity), @(item.accommodationPostcode)" class="accomName" onclick="addDirections(event)">
+                   @Html.DisplayFor(model => item.accommodationName)
+                </p>
+                <a href="http://@Html.DisplayFor(model => item.accommodationWebsite)">@Html.DisplayFor(model => item.accommodationWebsite)</a>
+            </div>
+}
+
+        </div>
+        <!--input id="pac-input" class="controls" type="text" placeholder="Search Box" -->
+
+        <div id="map"></div>
+    </div>
+    <div id="warnings-panel"></div>
+    <p id="printDirections">Click to print directions</p>
+    <div id="directions"></div>
+</div>

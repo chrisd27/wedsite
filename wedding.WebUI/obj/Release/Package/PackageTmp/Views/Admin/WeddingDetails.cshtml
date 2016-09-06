@@ -1,0 +1,107 @@
+﻿@model wedding.Model.Wedding
+
+@{
+    ViewBag.Title = "WeddingDetails";
+}
+
+<h2>WeddingDetails</h2>
+
+<div>
+    <h4>Wedding</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingVenueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingVenueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingVenueAddress1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingVenueAddress1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingVenueAddress2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingVenueAddress2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingVenueTown)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingVenueTown)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingVenueCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingVenueCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingVenuePostcode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingVenuePostcode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ceremonyTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ceremonyTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingEnd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingEnd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.weddingInformation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.weddingInformation)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    @if (Model != null) { Html.ActionLink("Edit", "EditWedding", new { id = Model.WeddingId }); }|
+    @Html.ActionLink("Back to List", "Index")
+</p>

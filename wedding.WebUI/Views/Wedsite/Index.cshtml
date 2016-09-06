@@ -1,0 +1,250 @@
+﻿@model wedding.Model.Wedding
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainSiteLayout.cshtml";
+    var weddingId = ViewData["WeddingId"];
+}
+
+<div ng-controller="WedsiteController">
+    <input type="hidden" id="weddingId" value="1003" />
+    <section id="mainSection">
+        <div class="sectionContent"></div>
+        
+        @if (ViewData["loggedIn"].Equals("true"))
+        {
+            <div id="welcomeMessage"></div>
+            <div id="countdown"></div>
+        }
+    </section>
+@if (ViewData["loggedIn"].Equals("true"))
+{
+    <section id="firstSection">
+        <div class="sectionContent">
+            <h2>SAVE THE DATE & RSVP</h2>
+            <div id="saveTheDate">
+            </div>
+            <div id="RSVPSection">
+                @{
+                    Html.RenderAction("RSVP", "Wedsite", new { weddingId = ViewData["WeddingId"] });
+                }
+            </div>
+        </div>
+    </section>
+    <section id="secondSection">
+        <div class="sectionContent">
+            <div class="opaqueBackground"></div>
+            @{
+                Html.RenderAction("Wedding", "Wedsite", new { weddingId = ViewData["WeddingId"]});
+            }
+        </div>
+    </section>
+    <section id="thirdSection">
+        <div class="sectionContent">
+            @{
+                Html.RenderAction("Accommodation", "Wedsite", new { weddingId = ViewData["WeddingId"] });
+            }
+        </div>
+</section>
+<script type="text/javascript">
+    var map;
+    var markers = [];
+    var directionsService;
+    var directionsDisplay;
+    function initMap() {
+        if ($("#map").length) {
+            var myLatLng = { lat: 53.288458, lng: -1.544527 };
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: myLatLng,
+                zoom: 14
+            });
+
+            markers[0] = addVenueMarker();
+
+            markers[0].addListener('click', toggleBounce);
+
+            // set renderer
+            directionsDisplay = new google.maps.DirectionsRenderer({ map: map });
+            directionsService = new google.maps.DirectionsService;
+
+            function toggleBounce() {
+                if (markers[0].getAnimation() !== null) {
+                    markers[0].setAnimation(null);
+                } else {
+                    markers[0].setAnimation(google.maps.Animation.BOUNCE);
+                }
+            }
+
+            /* Create the search box and link it to the UI element.
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input); */
+
+            var infowindow = new google.maps.InfoWindow();
+        } else {
+            return false;
+        }
+    } 
+
+    function addVenueMarker() {
+
+        var myLatLng = { lat: 53.288458, lng: -1.544527 };
+        var image = {
+            url: '/Content/images/maps_pointer.gif',
+            size: new google.maps.Size(90, 90),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(40, 40)
+        };
+
+        var marker = new google.maps.Marker({
+            map: map,
+            draggable: false,
+            icon: getVenueImage(),
+            animation: google.maps.Animation.DROP,
+            position: myLatLng
+        });
+
+        return marker;
+    }
+
+    function getVenueImage() {
+        var image = {
+            url: '/Content/images/maps_pointer.gif',
+            size: new google.maps.Size(90, 90),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(40, 40)
+        };
+        return image;
+    }
+
+    function addDirections(event) {
+        // Instantiate a directions service.
+        $('#printDirections').show();
+        
+        if ($(event.target).attr('data-dir-shown') == 'true') {
+            return false;
+        }
+        if (directionsDisplay != null) {
+            directionsDisplay.setMap(null);
+        }
+
+        // Create a renderer for directions and bind it to the map.
+        directionsDisplay.setMap(map);
+
+        // Instantiate an info window to hold step text.
+        var stepDisplay = new google.maps.InfoWindow;
+
+        // Display the route between the initial start and end selections.
+        // Listen to change events from the start and end lists.
+        
+        calculateAndDisplayRoute(directionsDisplay, directionsService, markers, stepDisplay, map, event);
+        
+
+    }
+
+    function calculateAndDisplayRoute(directionsDisplay, directionsService,
+    markers, stepDisplay, map, event) {
+        // First, remove any existing markers from the map.
+        // Rewmoves array markers
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        
+
+        // Retrieve the start and end locations and create a DirectionsRequest using
+        // DRIVING directions.
+        directionsService.route({
+            origin: event.currentTarget.dataset.destination,
+            destination: { lat: 53.288458, lng: -1.544527 },
+            travelMode: google.maps.TravelMode.DRIVING
+        }, function (response, status) {
+            // Route the directions and pass the response to a function to create
+            // markers for each step.
+            if (status === google.maps.DirectionsStatus.OK) {
+                new google.maps.DirectionsRenderer({
+                    map: map,
+                    directions: response,
+                    suppressMarkers: true
+                });
+                document.getElementById('warnings-panel').innerHTML =
+                    '<b>' + response.routes[0].warnings + '</b>';
+                directionsDisplay.setDirections(response);
+                var route = response.routes[0];
+                var start = route.legs[0].start_location;
+                var startAddress = route.legs[0].start_address;
+                var end = route.legs[0].end_location;
+                
+                showSteps(route.legs, event);
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+
+        
+    }
+    
+    function addMarker(position,map, icon, title) {
+        new google.maps.Marker({
+            position: position,
+            map: map,
+            icon: icon,
+            title:title
+        });
+    }
+
+    function showSteps(legs, event) {
+        // For each step, place a marker, and add the text to the marker's infowindow.
+        // Also attach the marker to an array so we can keep track of it and remove it
+        // when calculating new routes.
+        var steps = '';
+        var directionsContainer = $('#directions');
+
+        directionsContainer.toggle('fast');
+        directionsContainer.empty();
+        for (var i = 0; i < legs[0].steps.length; i++) {
+            steps = steps + '<p class="directions">'+legs[0].steps[i].instructions + '</p>';
+        }
+
+        steps = '<h5 onclick="toggleDirections(event)">Directions from ' + event.srcElement.innerText + ' to Horsleygate Hall </h5><div id="stepsContainer">' + steps + '</div>';
+        
+        //directionsContainer.css('display', 'none');
+        directionsContainer.append(steps);
+        directionsContainer.toggle('medium');
+
+        $('.accomName').attr('data-dir-shown', 'false');
+        $(event.target).attr('data-dir-shown', 'true');
+
+    }
+
+    function attachInstructionText(stepDisplay, marker, text, map) {
+        google.maps.event.addListener(marker, 'click', function () {
+            // Open an info window when the marker is clicked on, containing the text
+            // of the step.
+            stepDisplay.setContent(text);
+            stepDisplay.open(map, marker);
+        });
+    }
+
+   /* function codeAddress() {
+        var address = '55 Ruddington Lane, wilford, nottingham, NG11 7BG';
+        //document.getElementById('address').value;
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    } */
+
+</script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy8r_LZmWqQiFeanR2HIDiSZcOyJPFe3I&callback=initMap&libraries=places" async defer></script>
+                }
+</div>

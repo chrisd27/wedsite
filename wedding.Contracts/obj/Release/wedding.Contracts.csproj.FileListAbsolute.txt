@@ -1,0 +1,7 @@
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Contracts\bin\Release\wedding.Contracts.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Contracts\bin\Release\wedding.Contracts.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Contracts\bin\Release\wedding.Model.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Contracts\bin\Release\wedding.Model.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Contracts\obj\Release\wedding.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Contracts\obj\Release\wedding.Contracts.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Contracts\obj\Release\wedding.Contracts.pdb

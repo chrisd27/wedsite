@@ -1,0 +1,5 @@
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\bin\Debug\wedding.Model.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\bin\Debug\wedding.Model.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\obj\Debug\wedding.Model.dll
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\obj\Debug\wedding.Model.pdb
+C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Model\obj\Debug\wedding.Model.csprojResolveAssemblyReference.cache

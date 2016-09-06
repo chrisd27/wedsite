@@ -1,0 +1,36 @@
+﻿@model wedding.Model.Wedding
+
+<div id="weddingDetails">
+    <div id="detailsContainer">
+        <h2>The {{Wedding.weddingNickName}} Wedding!</h2>
+        <div id="venue">
+          <h5>@Html.Label("Venue")</h5>
+          <p>@Html.DisplayFor(model => model.weddingVenueName)</p>
+          <p>@Html.DisplayFor(model => model.weddingVenueAddress1)</p>
+          <p>@Html.DisplayFor(model => model.weddingVenueAddress2)</p>
+          <p>@Html.DisplayFor(model => model.weddingVenueTown)</p>
+          <p>@Html.DisplayFor(model => model.weddingVenueCity)</p>
+          <p>@Html.DisplayFor(model => model.weddingVenuePostcode)</p>
+        </div>
+
+        <div id="datesAndTiming">
+            <h5>Dates and timings</h5>
+            <div>
+                <p>@Html.Label("The big day!")</p>
+                <p>@Html.DisplayFor(model => model.weddingDate)</p>
+            </div>
+            <div>
+                <p>@Html.Label("Arrival and carriages")</p>
+                <p>@Html.DisplayFor(model => model.weddingStart) till @Html.DisplayFor(model => model.weddingEnd)</p>
+            </div>
+            <div>
+                <p>@Html.Label("Ceremony")</p>
+                <p>@Html.DisplayFor(model => model.ceremonyTime)</p>
+            </div>
+        </div>
+    </div>
+    <div id="weddingInfo">
+        <h5>@Html.Label("Wedding information")</h5>
+        <p>@Html.DisplayFor(model => model.weddingInformation)</p>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<wedding.Model.Wedding>
+
+@{
+    ViewBag.Title = "Weddings";
+
+}
+@if (ViewData["admin"].Equals("true"))
+{
+
+<h2>Weddings</h2>
+
+<div class="button">
+    @Html.ActionLink("Add new wedding", "CreateWedding")
+</div>
+<div  class="table">
+@foreach (var item in Model)
+{
+    <div class="header">
+        <div class="rowName">
+                @Html.DisplayFor(modelItem => item.weddingNickName)
+        </div>
+        <div class="controls">
+        
+            @Html.ActionLink("Setup your wedding", "DashboardIndex", new { id = item.WeddingId }) |
+            @Html.ActionLink("Remove", "DeleteWedding", new { id = item.WeddingId }, new { @class = "edit" })
+        </div>
+    </div>
+
+}
+</div>
+}

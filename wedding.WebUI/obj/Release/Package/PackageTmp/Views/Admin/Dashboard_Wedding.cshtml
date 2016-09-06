@@ -1,0 +1,43 @@
+﻿@model wedding.Model.Wedding
+
+<div class="detailContent">
+    <h4>@Html.DisplayFor(model => model.weddingNickName) on @Html.DisplayFor(model => model.weddingDate)</h4> 
+    <div class="anchorContainer">@Html.ActionLink("Edit", "EditWedding", new { id = Model.WeddingId })</div>
+    <hr />
+    <div class="detailDetails">
+        <div>
+            <label> Venue Name </label>
+            <p> @Html.DisplayFor(model => model.weddingVenueName)</p>
+        </div>
+
+        <div>
+            <label> Wedding Address </label>
+            <p>@Html.DisplayFor(model => model.weddingVenueAddress1)</p>
+            <p>@Html.DisplayFor(model => model.weddingVenueAddress2)</p>
+            <p>@Html.DisplayFor(model => model.weddingVenueTown)</p>
+            <p>@Html.DisplayFor(model => model.weddingVenueCity) </p>
+            <p>@Html.DisplayFor(model => model.weddingVenuePostcode) </p>
+        </div>
+
+        <div>
+            <label>Ceremony Time</label>
+            <p>@Html.DisplayFor(model => model.ceremonyTime)</p>
+        </div>
+
+        <div>
+            <label>Start time</label>
+            <p>@Html.DisplayFor(model => model.weddingStart)</p>
+        </div>
+
+        <div>
+            <label>End time</label>
+            <p>@Html.DisplayFor(model => model.weddingEnd)</p>
+        </div>
+
+        <div>
+            <label>Other info</label>
+            <p>@Html.DisplayFor(model => model.weddingInformation)</p>
+        </div>
+
+    </div>
+</div>

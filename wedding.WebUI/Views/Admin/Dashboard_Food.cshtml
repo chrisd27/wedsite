@@ -1,0 +1,62 @@
+﻿@model IEnumerable<wedding.Model.Food>
+
+<div class="listContainer">
+    <h4>Food options</h4>
+
+    @if ((bool)ViewData["food"].Equals(true))
+    {
+    <p class="addItem">
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <div class="col8">
+        <p>Food Company Name</p>
+        <p>Contact Name</p>
+        <p class="mobile">Contact Email</p>
+        <p>Contact Number</p>
+        <p class="mobileTablet">Starter Option</p>
+        <p class="mobileTablet">Main Option</p>
+        <p class="mobileTablet">Desert Option</p>
+        <p class="mobile">Food Available from</p>
+    </div>
+        foreach (var item in Model)
+        {
+        <div class="col8">
+            <p>
+                @Html.DisplayFor(modelItem => item.foodCompanyName)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.foodCompanyContactName)
+            </p>
+            <p class="mobile">
+                @Html.DisplayFor(modelItem => item.foodCompanyContactEmail)
+            </p>
+            <p>
+                @Html.DisplayFor(modelItem => item.foodCompanyContactNumber)
+            </p>
+            <p class="mobileTablet">
+                @Html.DisplayFor(modelItem => item.foodMenuStarter)
+            </p>
+            <p class="mobileTablet">
+                @Html.DisplayFor(modelItem => item.foodMenuMain)
+            </p>
+            <p class="mobileTablet">
+                @Html.DisplayFor(modelItem => item.foodMenuDesert)
+            </p>
+            <p class="mobile">
+                @Html.DisplayFor(modelItem => item.foodAvailableFrom)
+            </p>
+            <div>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FoodId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FoodId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FoodId })
+            </div>
+        </div>
+        }
+    }
+    else 
+    {
+        <p> You're going to be hungry! @Html.ActionLink("Add a Food Option", "CreateFood") </p>
+    }
+    
+</div>
+

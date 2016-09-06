@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html ng-app="Wedsite">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris and Jess... The Wedding!</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body ng-app="Wedsite">
+@if (ViewData["loggedIn"].Equals("true"))
+{
+    <a href="#" id="signOut">Sign Out</a>
+}
+    <div id="header">
+        <h1>Chris and Jess</h1>
+        <h2>The Wedding</h2>
+    </div>
+    @if (ViewData["loggedIn"].Equals("true"))
+    {
+    <div id="navBar">
+        <ul class="main-nav-bar">
+            <li data-slideTo="mainSection" class="menu_item"><div>HOME</div></li>
+            <li data-slideTo="firstSection" class="menu_item"><div>SAVE THE DATE & RSVP</div></li>
+            <li data-slideTo="secondSection" class="menu_item"><div>WEDDING</div></li>
+            <li data-slideTo="thirdSection" class="menu_item"><div>DIRECTIONS & SLEEP</div></li>
+        </ul>
+    </div>
+    <div id="mobile-navBar" ng-controller="navigationController" >
+        <div class="main-nav-bar">
+            <div id="mobileNavLeft" class="mobileNavArrow"><<<</div>
+            <nav class="menu box" ng-swipe-right="slideNext($event)" ng-swipe-left="slidePrev($event)">
+                <ul>
+                    <li ng-click="slideToElAng($event)" class="menu_item  {{nav.show}}" ng-repeat='nav in navigation'>
+                        <div data-slideTo="{{nav.slideTo}}"  data-index="{{nav.slideIndex}}" ng-slide-index="{{nav.slideIndex}}" class="menu_link {{nav.show}}">
+                            <p >{{nav.destination}}</p>
+                        </div>
+                    </li>
+               </ul>
+            </nav>
+            <div id="mobileNavRight" class="mobileNavArrow">>>></div>
+        </div>
+    </div>
+    }
+    else {
+    <div id="loginSection">
+        @{  
+            Html.RenderAction("Login", "Wedsite");
+        }
+    </div>
+        
+   }
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/customjs")
+    @RenderSection("scripts", required: false)
+    <div class="contentContainer">
+    
+        @RenderBody()
+    
+        <footer>
+            <p>&copy; @DateTime.Now.Year - MAGIC DAVIES PRODUCTIONS</p>
+        </footer>
+    </div>
+
+    
+
+</body>
+</html>
