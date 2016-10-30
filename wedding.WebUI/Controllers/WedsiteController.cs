@@ -74,8 +74,19 @@ namespace wedding.WebUI.Controllers
         [HttpPost]
         public ActionResult Login(LoginDetails login)
         {
-            
-            var loginGuests = guest.Where(c => c.username == login.username);
+            var email = login.email;
+            var inviteUsername = login.username;
+            IEnumerable<Guest> loginGuests = Enumerable.Empty<Guest>();
+            if ((email != null && inviteUsername != null) || (email == null && inviteUsername != null))
+            {
+                loginGuests = guest.Where(c => c.username == login.username);
+
+            }
+            else if(email != null && inviteUsername == null)
+            {
+                loginGuests = guest.Where(c => c.emailAddress == login.email);
+            }
+
             string jsonString = "";
             var changes = false;
             if (loginGuests != null && loginGuests.Any())
@@ -103,7 +114,7 @@ namespace wedding.WebUI.Controllers
 
                 // When email address is updated, add cookie
                 string cookieName = "Chris and Jess Wedding";
-               // string domain = "localhost"; // DEV
+                //string domain = "localhost"; // DEV
                 string domain = "chrisandjess.wedding"; // Prod
                 string username = loginGuests.First().username;
                 string nickname = loginGuests.Count() > 1 ? loginGuests.First().lastName : loginGuests.First().firstName;

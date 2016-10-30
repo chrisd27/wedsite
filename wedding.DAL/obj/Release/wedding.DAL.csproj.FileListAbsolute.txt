@@ -18,3 +18,23 @@ C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.D
 C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.DAL\obj\Release\wedding.DAL.Migrations.RSVPinitial.resources
 C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.DAL\obj\Release\wedding.DAL.Migrations.nullableDateTIme.resources
 C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.DAL\obj\Release\wedding.DAL.Migrations.increaseWeddingInfoSize.resources
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\wedding.DAL.dll.config
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\wedding.DAL.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\wedding.DAL.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\EntityFramework.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\wedding.Contracts.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\wedding.Model.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\wedding.Contracts.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\wedding.Model.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\EntityFramework.xml
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.csprojResolveAssemblyReference.cache
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.Migrations.rsvp.resources
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.Migrations.RSVPTimestamp.resources
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.Migrations.RSVPinitial.resources
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.Migrations.nullableDateTIme.resources
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.Migrations.increaseWeddingInfoSize.resources
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.csproj.GenerateResource.Cache
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.DAL\obj\Release\wedding.DAL.pdb

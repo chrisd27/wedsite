@@ -11,3 +11,16 @@ C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.S
 C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\obj\Release\wedding.Services.csprojResolveAssemblyReference.cache
 C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\obj\Release\wedding.Services.dll
 C:\Users\IBM_ADMIN\Documents\Visual Studio 2015\Projects\Chris\wedding\wedding.Services\obj\Release\wedding.Services.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.Services.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.Services.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.Contracts.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.DAL.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.Model.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\EntityFramework.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.Contracts.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.DAL.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\wedding.Model.pdb
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\bin\Release\EntityFramework.xml
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\obj\Release\wedding.Services.csprojResolveAssemblyReference.cache
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\obj\Release\wedding.Services.dll
+C:\Users\chris\Desktop\projects\wedsite\wedsite\wedding.Services\obj\Release\wedding.Services.pdb

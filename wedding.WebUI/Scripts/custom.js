@@ -329,12 +329,13 @@ $('#loginSubmitButton').click(function (e) {
 
             if (jsResultObj.status == 0) {
                 // no username matched - show error
-                var errorMessage = "<p>Sorry, the invitation code does not exist... try again or get in touch with Chris and Jess (or maybe you're not invited)</p>";
+                var errorMessage = "<p>Sorry, the invitation code or email address does not exist... try again or get in touch with Chris and Jess (or maybe you're not invited)</p>";
                 $('#errorMsg').html(errorMessage);
             } else if(jsResultObj[0].username != null && jsResultObj[0].emailAddress == null ){
                 // Only do AJAX for the username check (see if there is an email address, if not, ask for it). 
                 // Then do a page reload when this is successful.
                 message = getMessageString(jsResultObj[0], true);
+                $('#emailLoginContainer').slideToggle();
                 var emailHtml = '<div class="form-group"><label for="email">Oh hi there ' + jsResultObj[0].firstName + ', please enter your email for wedding updates!</label><div><input class="form-control text-box single-line" id="email" name="email" type="email" value="" onkeyup="emailValidation(event)"><span id="emailValidationError"></span></div></div>';
                 $('#emailContainer').html(emailHtml);
                 $('#username').prop('disabled', true);
